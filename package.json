@@ -1,0 +1,52 @@
+{
+  "name": "reactgh-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "bin": {
+    "rgh": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-ghana/cli     "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/react-ghana/cli/issues"
+  },
+  "homepage": "https://github.com/react-ghana/cli#readme",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.2",
+    "@types/inquirer": "^9.0.3",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.7.0",
+    "typescript": "^5.2.2",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "commander": "^11.0.0",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^7.3.3",
+    "react-native-rename": "^3.2.13",
+    "simple-git": "^3.20.0"
+  }
+}
