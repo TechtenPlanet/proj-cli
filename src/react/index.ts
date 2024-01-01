@@ -14,7 +14,7 @@ import { getProjectPath } from "../util";
  * @param projectName - Name of the project.
  * @returns A promise that resolves when the node modules are installed successfully.
  */
-async function installReactNodeModules(projectName: string): Promise<void> {
+const installReactNodeModules = async (projectName: string): Promise<void> => {
   console.log("Installing node modules for React project...");
   return new Promise<void>((resolve, reject) => {
     exec(
@@ -30,7 +30,7 @@ async function installReactNodeModules(projectName: string): Promise<void> {
       }
     );
   });
-}
+};
 
 /**
  * Initializes a React project by copying files and installing node modules.
@@ -41,9 +41,13 @@ export const initializeReactProject = async (
   projectName: string,
   tempDir: string
 ) => {
-  await fs.copy(`${tempDir}/app/react/web`, getProjectPath(`./${projectName}/app/react/web`), {
-    filter: (src) => src !== ".git",
-  });
+  await fs.copy(
+    `${tempDir}/app/react/web`,
+    getProjectPath(`./${projectName}/app/react/web`),
+    {
+      filter: (src) => src !== ".git",
+    }
+  );
   await installReactNodeModules(projectName);
 };
 

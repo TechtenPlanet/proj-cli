@@ -39,7 +39,7 @@ const renameReactNativeProject = (
  * @param projectName - The name of the project.
  * @returns A Promise that resolves when the node modules are installed successfully.
  */
-async function installReactNativeNodeModules(projectName: string) {
+const installReactNativeNodeModules = async (projectName: string) => {
   console.log("Installing node modules for React Native project...");
   return new Promise<void>((resolve, reject) => {
     exec(
@@ -55,7 +55,7 @@ async function installReactNativeNodeModules(projectName: string) {
       }
     );
   });
-}
+};
 
 /**
  * Initializes a React Native project by copying files, renaming the project, and installing node modules.

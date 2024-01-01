@@ -18,27 +18,26 @@ import {
 } from "./src/react-native";
 import { initializeReactProject, setupReactProject } from "./src/react";
 import { initializeServerProject, setupServerProject } from "./src/server";
-import { getProjectPath } from "./src/util";
-
-// Check if GitHub URL and token are provided
-if (!process.env.GITHUB_URL && !process.env.GITHUB_TOKEN) {
-  console.log("A GitHub account was not found.");
-}
-
-const githubUrl = process.env.GITHUB_URL;
-
-// Function to remove temporary directory
-const removeTempDir = async (tempDirPath: string) => {
-  try {
-    await fs.promises.rmdir(tempDirPath, { recursive: true });
-    console.log(`Temporary directory ${tempDirPath} has been removed.`);
-  } catch (error) {
-    console.error(`Error removing temporary directory: ${error}`);
-  }
-};
+import {
+  checkRNRenamePackage,
+  getProjectPath,
+  removeTempDir,
+} from "./src/util";
 
 const main = async () => {
   console.log("Starting CLI...");
+  // Check if GitHub URL and token are provided
+  if (!process.env.GITHUB_URL && !process.env.GITHUB_TOKEN) {
+    console.log("A GitHub account was not found.");
+  }
+
+  const githubUrl = process.env.GITHUB_URL;
+  try {
+    await checkRNRenamePackage();
+  } catch {
+    console.log("Are we weror");
+    process.exit(1); // Exit if the command fails
+  }
 
   const git = simpleGit();
   const tempDir = "./out/tempDir";

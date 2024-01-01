@@ -5,16 +5,15 @@ This CLI allows you to create new React, React Native, and Parse Server projects
 ## Installation
 
 To install the CLI, you can use npm or yarn. Open your terminal and run the following command:
-npm install -g @reactgh/cli
+`npm install -g @reactgh/cli`
 or
-yarn global add @reactgh/cli
+`yarn global add @reactgh/cli`
 This will install the CLI globally on your system, allowing you to use it from anywhere.
 
 ## Usage
 
 To create a new project, run the following command:
-bash
-rgh
+`rgh`
 This will prompt you to enter the project name and select a template (React, React Native, or Parse Server). Once you provide the necessary information, the CLI will create a new project in the current working directory.
 
 If you have set up the `.env` file with the GitHub URL and token, the project will be created and pushed to the specified Git repository. If the `.env` file is not provided, the project will be created locally.
